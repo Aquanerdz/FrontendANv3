@@ -66,9 +66,9 @@ export class RegisterComponent implements OnInit {
       this.cadService.registerUser(formValue).subscribe(
         (post) => {
           console.log(post);
-          // Reinicia o formulário
+
           this.form.reset();
-          // Voltar à página anterior
+
           this.router.navigate(['/landing']);
         },
         (error) => {

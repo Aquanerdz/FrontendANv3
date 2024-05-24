@@ -8,5 +8,17 @@
 </div>
 
 <div *ngIf="!isOnLoginOrRegisterPage()" class="top-log">
-
+  <button class="exit">
+    Sair
+  </button>
+  <div class="alterns">
+    <button  [ngClass]="{'checked': clicado, 'dischecked': !clicado}" (click)="setState(true)">
+      <img [src]=pathFish alt="peixe">
+      Meu sistemas
+    </button>
+    <button [ngClass]="{'checked': !clicado, 'dischecked': clicado}" (click)="setState(false)">
+      <img [src]=pathProf alt="perfil">
+      Meu perfil
+    </button>
+  </div>
 </div>
