@@ -57,7 +57,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        gap: 12vh;
+        gap: 7vh;
 
         .title{
           font-size: 5vh;
@@ -69,19 +69,51 @@
           display: flex;
           flex-direction: column;
           margin-bottom: 1rem;
+
+          .invalid{
+            color: #ff0000;
+          }
+
+          .is-invalid{
+            border: solid 1px #ff0000;
+          }
+
+          .ins-cell{
+            display: flex;
+            justify-content: space-between;
+
+            .ddd{
+              width: 20%;
+            }
+
+            .cell{
+              width: 75%;
+            }
+          }
         }
 
         .entry{
           width: -webkit-fill-available;
-          padding: .75rem 0;
+          padding: .5rem 0;
           border-radius: .5rem;
           background-color: var(--primary-color);
           box-shadow: 3px 4px 4px 0 #00000025;
-          margin-top: 5%;
+          font-family: var(--principal-font);
+          color: var(--white);
+          font-size: 3.5vh;
+        }
+
+        .invalid-geral{
+          display: flex;
+          .parag{
+            text-align: center;
+            color: #ff0000;
+          }
         }
 
         .contact{
           font-family: var(--second-font);
+          text-align: center;
         }
       }
     }

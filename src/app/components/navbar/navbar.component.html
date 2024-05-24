@@ -1,0 +1,12 @@
+<div *ngIf="isOnLoginOrRegisterPage()" class="top">
+  <h2 class="welcome">Boas Vindas</h2>
+  <img src="../../../assets/carinha.svg" alt="Aceno com a mao" class="happy">
+  <div class="two-btns">
+    <button class="btn-esc" routerLink='/login'>Entar</button>
+    <button class="btn-esc create" routerLink="/register">Criar conta</button>
+  </div>
+</div>
+
+<div *ngIf="!isOnLoginOrRegisterPage()" class="top-log">
+
+</div>
