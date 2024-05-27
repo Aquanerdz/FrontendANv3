@@ -4,7 +4,7 @@
   align-items: center;
   // justify-content: center;
   background-color: var(--white);
-  height: 87vh;
+  height: 89.75vh;
   width: 100vw;
 
   .stm{
@@ -26,7 +26,7 @@
     .left{
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: flex-start;
       height: 100%;
       width: 25vw;

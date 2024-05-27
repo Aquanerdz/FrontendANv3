@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="content">
+    <h2 class="cadastre">Cadastre seus sistemas</h2>
+  <div class="abaixo">
+    <div class="interacts">
+      <form >
+        <div class="inserts">
+          <label>Nome</label>
+          <input
+            type="text"
+            placeholder="Dê um nome ao novo sistema"
+            formControlName="nome"
+            required
+          />
+        </div>
+        <div class="inserts">
+          <label>Tamano do tanque</label>
+          <input
+            type="number"
+            placeholder="Quantidade em Litros"
+            formControlName="nome"
+            required
+          />
+        </div>
+        <div class="inserts">
+          <label>Espécie do peixe</label>
+          <div class="custom-select">
+            <select >
+                <option>Tilápia</option>
+                <option>Peixe Nemo</option>
+                <option>Lola Molusco</option>
+                <option>Peixe Aquático</option>
+            </select>
+            <div class="select-arrow"></div>
+        </div>
+        </div>
+        <div class="inserts">
+          <label>Quantidade de peixes</label>
+          <input
+            type="number"
+            placeholder="Peixes no total"
+            formControlName="nome"
+            required
+          />
+        </div>
+        <button type="submit" class="envio">
+          Salvar
+        </button>
+        <button routerLink="/systems" type="reset" class="envio cancela">
+          Cancelar
+        </button>
+      </form>
+    </div>
+    <div class="engrenagens">
+      <div class="gear-container">
+        <img src="../../../assets/engr-1.svg" alt="Engrenagens" class="gear gear1">
+        <img src="../../../assets/engr-2.svg" alt="Engrenagens" class="gear gear2">
+        <img src="../../../assets/engr-3.svg" alt="Engrenagens" class="gear gear3">
+        <img src="../../../assets/engr-4.svg" alt="Engrenagens" class="gear gear4">
+        <img src="../../../assets/engr-5.svg" alt="Engrenagens" class="gear gear5">
+      </div>
+    </div>
+  </div>
+</div>
+

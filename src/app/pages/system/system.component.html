@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<div class="content">
+  <div class="ttl">
+    <h2 class="system-name">Peixes Tanque Sul</h2>
+    <button class="back" routerLink="/systems">
+      <img src="../../../assets/return.svg" alt="voltar-botao" />
+      Voltar
+    </button>
+  </div>
+  <div class="center">
+    <div class="infos">
+      <div class="alimentacao">
+        <p class="title-card">Alimentação</p>
+        <div class="card-alim">
+          <div class="hours">
+            <p class="realizada">Realizada</p>
+            <h5 class="hr">13:00</h5>
+          </div>
+          <div class="hours">
+            <p class="realizada">Próxima prevista</p>
+            <h5 class="hr">21:00</h5>
+          </div>
+        </div>
+      </div>
+      <div class="alimentacao fishes">
+        <div class="top-card-fishes">
+          <p class="title-card">Peixes do sistema</p>
+          <img class="editar" src="../../../assets/edit-pen.svg" alt="editar" />
+        </div>
+        <div class="card-alim">
+          <div class="hours">
+            <p class="realizada">Espécie</p>
+            <h5 class="hr">Tilápia San Pitter</h5>
+          </div>
+          <div class="hours">
+            <p class="realizada">Quantidade</p>
+            <h5 class="hr">45 Peixes</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="meds">
+      <p class="title-card-ox">Medição</p>
+      <div class="card-meds">
+        <h5 class="nome-med">Oxigênio</h5>
+        <div class="center-values">
+            <app-oxigen></app-oxigen>
+            <app-oxigen></app-oxigen>
+        </div>
+      </div>
+      <div class="options-ox">
+        <button class="select">
+          <img src="../../../assets/arrow-black-left.svg" alt="ver parametro" />
+        </button>
+        <button class="select">
+          <img
+            src="../../../assets/arrow-black-right.svg"
+            alt="ver parametro"
+          />
+        </button>
+      </div>
+    </div>
+    <div class="slogan">
+      <img class="simbolo-an" src="../../../assets/gota.svg" alt="slogan gota" />
+    </div>
+  </div>
+</div>

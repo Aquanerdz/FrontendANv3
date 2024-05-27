@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         (post) => {
           console.log(post);
           // console.log(JSON.parse(JSON.stringify(post)).msg.split('login feito! = ')[1]);
-          var token = JSON.parse(JSON.stringify(post)).msg.split('login feito! = ')[1];
+          var token = JSON.parse(JSON.stringify(post)).token;
 
           localStorage.setItem('token', token);
           this.form.reset();

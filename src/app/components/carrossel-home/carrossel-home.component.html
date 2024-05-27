@@ -1,0 +1,16 @@
+<div class="carousel">
+  <div class="carousel-item" *ngFor="let item of [0, 1, 2]; let i = index" [ngClass]="{'active': currentIndex === i}">
+    <div class="content">
+      <!-- <div class="slide-first">
+
+      </div> -->
+      <ng-container >
+        
+      </ng-container>
+      Slide {{ i + 1 }}
+    </div>
+  </div>
+</div>
+<div class="indicators">
+  <span *ngFor="let item of [0, 1, 2]; let i = index" [ngClass]="{'active': currentIndex === i}" (click)="setSlide(i)"></span>
+</div>
