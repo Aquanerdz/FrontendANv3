@@ -11,4 +11,8 @@ export class GetTokenService {
     return !!localStorage.getItem('token');
   }
 
+  getToken(): string {
+    return localStorage.getItem('token') || '';
+  }
+
 }

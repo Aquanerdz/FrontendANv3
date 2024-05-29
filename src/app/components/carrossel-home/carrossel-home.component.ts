@@ -1,21 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-// import { Component, ViewChild } from '@angular/core';
-
-enum SlideIndex {
-  Slide1 = 0,
-  Slide2 = 1,
-  Slide3 = 2,
-}
+import { Slide1Component } from '../slide1/slide1.component';
+import { Slide2Component } from '../slide2/slide2.component';
+import { Slide3Component } from '../slide3/slide3.component';
 
 @Component({
   selector: 'app-carrossel-home',
   templateUrl: './carrossel-home.component.html',
-  styleUrls: ['./carrossel-home.component.scss'],
+  styleUrls: ['./carrossel-home.component.scss']
 })
-
 export class CarrosselHomeComponent implements OnInit, OnDestroy {
   currentIndex: number = 0;
   interval: any;
+
+  slides = [Slide1Component, Slide2Component, Slide3Component];
 
   ngOnInit() {
     this.startCarousel();
@@ -28,7 +25,7 @@ export class CarrosselHomeComponent implements OnInit, OnDestroy {
   startCarousel() {
     this.interval = setInterval(() => {
       this.nextSlide();
-    }, 3000); // Tempo de intervalo entre slides (em milissegundos)
+    }, 4000);
   }
 
   stopCarousel() {
@@ -36,7 +33,7 @@ export class CarrosselHomeComponent implements OnInit, OnDestroy {
   }
 
   nextSlide() {
-    this.currentIndex = (this.currentIndex + 1) % 3;
+    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
   }
 
   setSlide(index: number) {
@@ -45,4 +42,3 @@ export class CarrosselHomeComponent implements OnInit, OnDestroy {
     this.startCarousel();
   }
 }
-

@@ -1,8 +1,9 @@
 .content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 25vw;
+  justify-content: space-between;
+  height: 45vh;
+  width: 100%;
   .odometro {
     width: 100%;
   }

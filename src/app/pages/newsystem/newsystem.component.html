@@ -1,49 +1,56 @@
 <app-navbar></app-navbar>
 <div class="content">
-    <h2 class="cadastre">Cadastre seus sistemas</h2>
+    <h2 class="cadastre">Cadastre seus Sistemas</h2>
   <div class="abaixo">
     <div class="interacts">
-      <form >
+      <form (ngSubmit)="submitNewSyst()" [formGroup]="form" #formDir="ngForm">
         <div class="inserts">
           <label>Nome</label>
           <input
             type="text"
             placeholder="Dê um nome ao novo sistema"
-            formControlName="nome"
+            formControlName="nomeSystem"
             required
+            [ngClass]="{
+              'is-invalid':
+                form.get('nomeSystem')?.['invalid'] &&
+                (form.get('nomeSystem')?.touched || formDir.submitted)
+            }"
           />
         </div>
         <div class="inserts">
-          <label>Tamano do tanque</label>
+          <label>Tamanho do Tanque</label>
           <input
             type="number"
             placeholder="Quantidade em Litros"
-            formControlName="nome"
+            formControlName="tamanhoTanque"
+            maxlength="5"
             required
           />
         </div>
         <div class="inserts">
-          <label>Espécie do peixe</label>
+          <label>Espécie dos Peixes</label>
           <div class="custom-select">
-            <select >
-                <option>Tilápia</option>
-                <option>Peixe Nemo</option>
-                <option>Lola Molusco</option>
-                <option>Peixe Aquático</option>
+            <select formControlName="idPeixe">
+                <option value=0>Tilápia</option>
+                <option value=1>Saint peter</option>
+                <option value=2>Carpa koi</option>
+                <option value=3>Peixe Aquático</option>
             </select>
             <div class="select-arrow"></div>
         </div>
         </div>
         <div class="inserts">
-          <label>Quantidade de peixes</label>
+          <label>Quantidade de Peixes</label>
           <input
             type="number"
             placeholder="Peixes no total"
-            formControlName="nome"
+            formControlName="qtdPeixe"
+            maxlength="4"
             required
           />
         </div>
-        <button type="submit" class="envio">
+        <button type="submit" class="envio" [disabled]="form.invalid">
           Salvar
         </button>
         <button routerLink="/systems" type="reset" class="envio cancela">

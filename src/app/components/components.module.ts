@@ -7,6 +7,9 @@ import { NgbAlertModule, NgbCarouselModule, NgbPaginationModule } from '@ng-boot
 import { OxigenComponent } from './oxigen/oxigen.component';
 import { TemperatureComponent } from './temperature/temperature.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { Slide1Component } from './slide1/slide1.component';
+import { Slide2Component } from './slide2/slide2.component';
+import { Slide3Component } from './slide3/slide3.component';
 
 
 
@@ -15,7 +18,10 @@ import { NgxEchartsModule } from 'ngx-echarts';
     NavbarComponent,
     CarrosselHomeComponent,
     OxigenComponent,
-    TemperatureComponent
+    TemperatureComponent,
+    Slide1Component,
+    Slide2Component,
+    Slide3Component
   ],
   imports: [
     CommonModule,
@@ -34,7 +40,10 @@ import { NgxEchartsModule } from 'ngx-echarts';
   exports: [
     NavbarComponent,
     CarrosselHomeComponent,
-    OxigenComponent
+    OxigenComponent,
+    Slide1Component,
+    Slide2Component,
+    Slide3Component
   ]
 })
 export class ComponentsModule { }

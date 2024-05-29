@@ -20,8 +20,6 @@ export class OxigenComponent implements OnInit {
     this.loadData();
   }
 
-
-
   onChartInit(ec: any) {
     this.echartsInstance = ec;
   }
@@ -33,8 +31,8 @@ export class OxigenComponent implements OnInit {
 
   getDataFromAPI(): Promise<number> {
     return new Promise((resolve, reject) => {
-      const random = +(Math.random() * 80).toFixed(2);
-      setTimeout(() => resolve(random), 1000);
+      const apiValue = +(Math.random() * 80).toFixed(2);
+      setTimeout(() => resolve(apiValue), 1000);
     });
   }
 
@@ -133,4 +131,6 @@ export class OxigenComponent implements OnInit {
       ]
     }
   }
+
+  
 }

@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { NewsystemRoutingModule } from './newsystem-routing.module';
 import { NewsystemComponent } from './newsystem.component';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 
 @NgModule({
@@ -13,7 +15,11 @@ import { ComponentsModule } from 'src/app/components/components.module';
   imports: [
     CommonModule,
     NewsystemRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ]
 })
 export class NewsystemModule { }
