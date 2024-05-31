@@ -3,9 +3,9 @@
   <h2 class="stm">Sistemas</h2>
   <div class="center">
     <div class="left">
-      <div class="card" routerLink="/system">
+      <div class="card" *ngFor="let sistema of listaSystems">
         <div class="title-vector">
-          <h5 class="card-title">Peixes Tanque Sul</h5>
+          <h5 class="card-title">{{sistema.nome_sistema}}</h5>
           <img src="../../../assets/info-circle.svg" alt="Mais infos" />
         </div>
         <!-- <p class="card-infos">Funcionando por 2 meses e 3 dias</p> -->

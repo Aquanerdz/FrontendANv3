@@ -10,6 +10,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { Slide1Component } from './slide1/slide1.component';
 import { Slide2Component } from './slide2/slide2.component';
 import { Slide3Component } from './slide3/slide3.component';
+import { TemperatureBarComponent } from './temperature-bar/temperature-bar.component';
+import { OxygenBarComponent } from './oxygen-bar/oxygen-bar.component';
 
 
 
@@ -21,7 +23,9 @@ import { Slide3Component } from './slide3/slide3.component';
     TemperatureComponent,
     Slide1Component,
     Slide2Component,
-    Slide3Component
+    Slide3Component,
+    TemperatureBarComponent,
+    OxygenBarComponent,
   ],
   imports: [
     CommonModule,
@@ -41,9 +45,12 @@ import { Slide3Component } from './slide3/slide3.component';
     NavbarComponent,
     CarrosselHomeComponent,
     OxigenComponent,
+    TemperatureComponent,
     Slide1Component,
     Slide2Component,
-    Slide3Component
+    Slide3Component,
+    TemperatureBarComponent,
+    OxygenBarComponent,
   ]
 })
 export class ComponentsModule { }

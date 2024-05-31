@@ -1,10 +1,10 @@
 export interface cadUser {
-  nome: string
-  email: string
-  senha: string
+  nome: string;
+  email: string;
+  senha: string;
   // confSenha: string
-  cod: string
-  telefone: string
+  cod: string;
+  telefone: string;
 }
 
 export interface logUser {
@@ -19,3 +19,11 @@ export interface cadSystem {
   tamanho_tanque: number;
 }
 
+export interface systems {
+  sistemas: any[]
+  id_sistema: number
+  id_peixe: number
+  nome_sistema: string
+  qto_peixe: number
+  tamanho_tanque: number
+}

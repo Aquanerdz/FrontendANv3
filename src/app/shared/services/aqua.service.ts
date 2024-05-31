@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { cadSystem, cadUser, logUser } from 'src/app/models/aqua';
+import { cadSystem, cadUser, logUser, systems } from 'src/app/models/aqua';
 import { environment } from 'src/environments/environment';
 import { GetTokenService } from './getToken.service';
 import { Token } from '@angular/compiler';
@@ -33,5 +33,14 @@ export class AquaService {
     })
     // console.log(body);
     return this.http.post<cadSystem>(environment.API_URL + "/sistema", body, {headers: headerrs});
+  }
+
+  listSystem(): Observable<{ sistemas: systems[] }>{
+    const headerrs = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.token.getToken()}`
+    })
+    // console.log(body);
+    return this.http.get<{ sistemas: systems[] }>(environment.API_URL + "/sistemas", {headers: headerrs});
   }
 }

@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="content">
-    <h2 class="cadastre">Cadastre seus Sistemas</h2>
+  <h2 class="cadastre">Cadastre seus Sistemas</h2>
   <div class="abaixo">
     <div class="interacts">
       <form (ngSubmit)="submitNewSyst()" [formGroup]="form" #formDir="ngForm">
@@ -17,6 +17,12 @@
                 (form.get('nomeSystem')?.touched || formDir.submitted)
             }"
           />
+          <div
+            *ngIf="this.form.get('nomeSystem')!.invalid && (this.form.get('nomeSystem')!.touched || formDir.submitted)"
+            class="invalid"
+          >
+            <p>Nome é obrigatório</p>
+          </div>
         </div>
         <div class="inserts">
           <label>Tamanho do Tanque</label>
@@ -24,21 +30,31 @@
             type="number"
             placeholder="Quantidade em Litros"
             formControlName="tamanhoTanque"
-            maxlength="5"
             required
+            [ngClass]="{
+              'is-invalid':
+                form.get('tamanhoTanque')?.['invalid'] &&
+                (form.get('tamanhoTanque')?.touched || formDir.submitted)
+            }"
           />
+          <div
+            *ngIf="this.form.get('tamanhoTanque')!.invalid && (this.form.get('tamanhoTanque')!.touched || formDir.submitted)"
+            class="invalid"
+          >
+            <p>O tamanho do tanque é obrigatório</p>
+          </div>
         </div>
         <div class="inserts">
           <label>Espécie dos Peixes</label>
           <div class="custom-select">
             <select formControlName="idPeixe">
-                <option value=0>Tilápia</option>
-                <option value=1>Saint peter</option>
-                <option value=2>Carpa koi</option>
-                <option value=3>Peixe Aquático</option>
+              <option value="0">Tilápia</option>
+              <option value="1">Saint peter</option>
+              <option value="2" [defaultSelected]="2">Carpa koi</option>
+              <option value="3">Peixe Aquático</option>
             </select>
             <div class="select-arrow"></div>
-        </div>
+          </div>
         </div>
         <div class="inserts">
           <label>Quantidade de Peixes</label>
@@ -46,13 +62,21 @@
             type="number"
             placeholder="Peixes no total"
             formControlName="qtdPeixe"
-            maxlength="4"
             required
+            [ngClass]="{
+              'is-invalid':
+                form.get('qtdPeixe')?.['invalid'] &&
+                (form.get('qtdPeixe')?.touched || formDir.submitted)
+            }"
           />
+          <div
+            *ngIf="this.form.get('qtdPeixe')!.invalid && (this.form.get('qtdPeixe')!.touched || formDir.submitted)"
+            class="invalid"
+          >
+            <p>A quantidade peixes é obrigatória</p>
+          </div>
         </div>
-        <button type="submit" class="envio" [disabled]="form.invalid">
-          Salvar
-        </button>
+        <button type="submit" class="envio">Salvar</button>
         <button routerLink="/systems" type="reset" class="envio cancela">
           Cancelar
         </button>
@@ -60,13 +84,32 @@
     </div>
     <div class="engrenagens">
       <div class="gear-container">
-        <img src="../../../assets/engr-1.svg" alt="Engrenagens" class="gear gear1">
-        <img src="../../../assets/engr-2.svg" alt="Engrenagens" class="gear gear2">
-        <img src="../../../assets/engr-3.svg" alt="Engrenagens" class="gear gear3">
-        <img src="../../../assets/engr-4.svg" alt="Engrenagens" class="gear gear4">
-        <img src="../../../assets/engr-5.svg" alt="Engrenagens" class="gear gear5">
+        <img
+          src="../../../assets/engr-1.svg"
+          alt="Engrenagens"
+          class="gear gear1"
+        />
+        <img
+          src="../../../assets/engr-2.svg"
+          alt="Engrenagens"
+          class="gear gear2"
+        />
+        <img
+          src="../../../assets/engr-3.svg"
+          alt="Engrenagens"
+          class="gear gear3"
+        />
+        <img
+          src="../../../assets/engr-4.svg"
+          alt="Engrenagens"
+          class="gear gear4"
+        />
+        <img
+          src="../../../assets/engr-5.svg"
+          alt="Engrenagens"
+          class="gear gear5"
+        />
       </div>
     </div>
   </div>
 </div>
-

@@ -16,9 +16,9 @@ export class NewsystemComponent {
   ngOnInit(): void {
     this.form = this.fb.group({
       nomeSystem: ["", Validators.required],
-      tamanhoTanque: [, Validators.required],
-      idPeixe: [, Validators.required],
-      qtdPeixe: [, Validators.required]
+      tamanhoTanque: ["",Validators.required],
+      idPeixe: ["", Validators.required],
+      qtdPeixe: ["", Validators.required]
     })
   }
 
@@ -43,6 +43,8 @@ export class NewsystemComponent {
         }
       )
 
+    } else {
+      console.log("formulario invalido")
     }
   }
 }

@@ -7,9 +7,9 @@
 </div>
 
 <div class="carousel-controls">
-  <button (click)="setSlide(0)">&bull;</button>
-  <button (click)="setSlide(1)">&bull;</button>
-  <button (click)="setSlide(2)">&bull;</button>
+  <button [ngClass]="{'checked1': currentIndex === 0}" class="sets" (click)="setSlide(0)">&bull;</button>
+  <button [ngClass]="{'checked1': currentIndex === 1}" class="sets" (click)="setSlide(1)">&bull;</button>
+  <button [ngClass]="{'checked1': currentIndex === 2}" class="sets" (click)="setSlide(2)">&bull;</button>
 </div>
 
 
