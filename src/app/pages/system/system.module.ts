@@ -19,6 +19,9 @@ import { NgxEchartsModule } from 'ngx-echarts';
       echarts: () => import('echarts'), // or import('./path-to-my-custom-echarts')
     }),
     ComponentsModule
-  ]
+  ],
+  // exports: [
+  //   SystemComponent
+  // ]
 })
 export class SystemModule { }

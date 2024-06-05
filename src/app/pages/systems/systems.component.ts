@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { systems } from 'src/app/models/aqua';
+import { Router } from '@angular/router';
+import { Systems } from 'src/app/models/aqua';
 import { AquaService } from 'src/app/shared/services/aqua.service';
 
 @Component({
@@ -8,9 +9,17 @@ import { AquaService } from 'src/app/shared/services/aqua.service';
   styleUrls: ['./systems.component.scss']
 })
 export class SystemsComponent implements OnInit {
-  listaSystems: systems[] = [];
+  listaSystems: Systems[] = [];
 
-  constructor(private systemsService: AquaService){}
+  constructor(private systemsService: AquaService, private router: Router){}
+
+  // findId(id: number){
+  //   return this.listaSystems.find(system => system.id_sistema === id)
+  // }
+
+  detalharSistema(){
+
+  }
 
   ngOnInit(): void {
     this.listarSystems()
@@ -22,4 +31,6 @@ export class SystemsComponent implements OnInit {
       console.log(this.listaSystems)
     })
   }
+
+
 }

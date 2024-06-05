@@ -41,21 +41,29 @@
     </div>
     <div class="meds">
       <p class="title-card-ox">Medição</p>
-      <app-oxigen></app-oxigen>
+      <app-oxigen *ngIf="currentComponent === 'oxigen'"></app-oxigen>
+      <app-temperature *ngIf="currentComponent === 'temperature'"></app-temperature>
       <div class="options-ox">
-        <button class="select">
-          <img src="../../../assets/arrow-black-left.svg" alt="ver parametro" />
+        <button class="select" (click)="showNextComponent()">
+          <img
+            src="../../../assets/arrow-black-left.svg"
+            alt="ver parametro seguinte"
+          />
         </button>
-        <button class="select">
+        <button class="select" (click)="showPreviousComponent()">
           <img
             src="../../../assets/arrow-black-right.svg"
-            alt="ver parametro"
+            alt="ver parametro anterior"
           />
         </button>
       </div>
     </div>
     <div class="slogan">
-      <img class="simbolo-an" src="../../../assets/gota.svg" alt="slogan gota" />
+      <img
+        class="simbolo-an"
+        src="../../../assets/gota.svg"
+        alt="slogan gota"
+      />
     </div>
   </div>
 </div>

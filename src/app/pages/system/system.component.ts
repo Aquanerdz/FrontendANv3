@@ -8,14 +8,21 @@ import { ECharts } from 'echarts/types/dist/echarts';
   styleUrls: ['./system.component.scss']
 })
 export class SystemComponent {
+  currentComponent: string = 'temperature';
 
-  position: number = 0;
-
-  mudarMed(soma: number){
-    if(this.position == 1){
-      this.position = 0;
+  showPreviousComponent() {
+    if (this.currentComponent === 'temperature') {
+      this.currentComponent = 'oxigen';
     } else {
-      this.position += soma;
+      this.currentComponent = 'temperature';
+    }
+  }
+
+  showNextComponent() {
+    if (this.currentComponent === 'oxigen') {
+      this.currentComponent = 'temperature';
+    } else {
+      this.currentComponent = 'oxigen';
     }
   }
 

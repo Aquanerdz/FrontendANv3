@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import { NgxEchartsDirective } from 'ngx-echarts';
 import { ECharts } from 'echarts/types/dist/echarts';
@@ -8,7 +8,7 @@ import { ECharts } from 'echarts/types/dist/echarts';
   templateUrl: './oxygen-bar.component.html',
   styleUrls: ['./oxygen-bar.component.scss']
 })
-export class OxygenBarComponent {
+export class OxygenBarComponent implements OnInit {
   option: EChartsOption = {};
 
   constructor(){

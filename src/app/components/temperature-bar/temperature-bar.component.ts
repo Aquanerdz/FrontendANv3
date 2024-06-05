@@ -1,131 +1,104 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { EChartsOption } from 'echarts';
+import { NgxEchartsDirective } from 'ngx-echarts';
+import { ECharts } from 'echarts/types/dist/echarts';
 
 @Component({
   selector: 'app-temperature-bar',
   templateUrl: './temperature-bar.component.html',
   styleUrls: ['./temperature-bar.component.scss']
 })
-export class TemperatureBarComponent {
-  // option: EChartsOption = {};
+export class TemperatureBarComponent implements OnInit {
+  option: EChartsOption = {};
 
-  // constructor(){
-  // }
+  constructor(){
+  }
 
-  // @ViewChild(`chart`) echartsInstance: ECharts | null = null;
+  @ViewChild(`chart`) echartsInstance: ECharts | null = null;
 
-  // ngOnInit(): void {
-  //   this.loadData();
-  // }
+  ngOnInit(): void {
+    this.loadData();
+  }
 
-  // onChartInit(ec: any) {
-  //   this.echartsInstance = ec;
-  // }
+  onChartInit(ec: any) {
+    this.echartsInstance = ec;
+  }
 
-  // async loadData(): Promise<void> {
-  //   const oxygenValue = await this.getDataFromAPI();
-  //   this.setOptions(oxygenValue);
-  // }
+  async loadData(): Promise<void> {
+    const oxygenValue = await this.getDataFromAPI();
+    this.setOptions(oxygenValue);
+  }
 
-  // getDataFromAPI(): Promise<number> {
-  //   return new Promise((resolve, reject) => {
-  //     const apiValue = +(Math.random() * 80).toFixed(2);
-  //     setTimeout(() => resolve(apiValue), 1000);
-  //   });
-  // }
+  getDataFromAPI(): Promise<number> {
+    return new Promise((resolve, reject) => {
+      const apiValue = +(Math.random() * 80).toFixed(2);
+      setTimeout(() => resolve(apiValue), 1000);
+    });
+  }
 
-  // setGrapData(value: number) {
-  //   const newOpt: EChartsOption = {
-  //     series: [
-  //       {
-  //         data: [
-  //           {
-  //             value: 4,
-  //           },
-  //         ],
-  //       },
-  //     ],
-  //   };
-  //   this.echartsInstance?.setOption(newOpt);
-  // }
+  setGrapData(value: number) {
+    const newOpt: EChartsOption = {
+      series: [
+        {
+          data: [
+            {
+              value: 4,
+            },
+          ],
+        },
+      ],
+    };
+    this.echartsInstance?.setOption(newOpt);
+  }
 
-  // private setOptions(value:number) {
-  //   this.option = {
-  //     series: [
-  //       {
-  //         type: 'gauge',
-  //         center: ['50%', '60%'],
-  //         startAngle: 190,
-  //         endAngle: -10,
+  private setOptions(value:number) {
+    this.option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30'],
+          axisTick: {
+            alignWithLabel: true
+          }
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+      series: [
+        {
+          name: 'Oxigenação em',
+          type: 'bar',
+          barWidth: '60%',
+          data: [14, 20, 25, 34, 24, 26],
+          label: {
+            show: true,
+            position: 'insideTop',
+            distance: 10,
+            color: '#010020',
+            fontWeight: 'bold'
+          },
+          color: '#00ADFF',
+          itemStyle: {
+            borderRadius: [24, 24, 0, 0]
+          }
+        }
+      ]
+    };
 
-  //         min: 0,
-  //         max: 100,
-  //         //divisoes do total
-  //         splitNumber: 5,
-  //         itemStyle: {
-  //           //cor do nivel
-  //           color: '#59EB57',
-  //         },
-  //         progress: {
-  //           show: true,
-  //           width: 30,
-  //         },
-
-  //         pointer: {
-  //           show: false,
-  //         },
-  //         axisLine: {
-  //           lineStyle: {
-  //             width: 30,
-  //           },
-  //         },
-  //         axisTick: {
-  //           show: false,
-  //           distance: -45,
-  //           splitNumber: 1,
-  //           lineStyle: {
-  //             width: 2,
-  //             color: '#000000',
-  //           },
-  //         },
-  //         splitLine: {
-  //           show: false,
-  //           distance: -50,
-  //           length: 0,
-  //           lineStyle: {
-  //             width: 3,
-  //             color: '#999',
-  //           },
-  //         },
-  //         axisLabel: {
-  //           show: false,
-  //           distance: -20,
-  //           color: '#000000',
-  //           fontSize: 20,
-  //         },
-  //         anchor: {
-  //           show: false,
-  //         },
-  //         title: {
-  //           show: false,
-  //         },
-  //         detail: {
-  //           valueAnimation: true,
-  //           width: '60%',
-  //           lineHeight: 40,
-  //           borderRadius: 8,
-  //           offsetCenter: [0, '-15%'],
-  //           fontSize: 25,
-  //           fontWeight: 'bolder',
-  //           formatter: '{value} %',
-  //           color: 'inherit',
-  //         },
-  //         data: [
-  //           {
-  //             value,
-  //           },
-  //         ],
-  //       },
-  //     ]
-  //   }
-  // }
+  }
 }

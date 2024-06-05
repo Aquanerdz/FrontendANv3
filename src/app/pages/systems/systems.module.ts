@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { SystemsRoutingModule } from './systems-routing.module';
 import { SystemsComponent } from './systems.component';
+// import { SystemModule } from '../system/system.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SystemsComponent } from './systems.component';
   imports: [
     CommonModule,
     SystemsRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    // SystemModule
   ]
 })
 export class SystemsModule { }

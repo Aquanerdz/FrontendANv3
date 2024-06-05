@@ -1,4 +1,4 @@
-export interface cadUser {
+export interface CadUser {
   nome: string;
   email: string;
   senha: string;
@@ -7,19 +7,19 @@ export interface cadUser {
   telefone: string;
 }
 
-export interface logUser {
+export interface LogUser {
   email: string;
   senha: string;
 }
 
-export interface cadSystem {
+export interface CadSystem {
   id_peixe: number;
   nome_sistema: string;
   qto_peixe: number;
   tamanho_tanque: number;
 }
 
-export interface systems {
+export interface Systems {
   sistemas: any[]
   id_sistema: number
   id_peixe: number
