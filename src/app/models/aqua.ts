@@ -27,3 +27,12 @@ export interface Systems {
   qto_peixe: number
   tamanho_tanque: number
 }
+
+
+export interface System {
+  id_sistema: number
+  id_peixe: number
+  nome_sistema: string
+  qto_peixe: number
+  tamanho_tanque: number
+}

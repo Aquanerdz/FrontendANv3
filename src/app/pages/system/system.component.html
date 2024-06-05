@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <div class="content">
   <div class="ttl">
-    <h2 class="system-name">Peixes Tanque Sul</h2>
-    <button class="back" routerLink="/systems">
+    <h2 class="system-name">{{sistema.nome_sistema}}</h2>
+    <button class="back" (click)="voltar()">
       <img src="../../../assets/return.svg" alt="voltar-botao" />
       Voltar
     </button>
@@ -30,11 +30,11 @@
         <div class="card-alim">
           <div class="hours">
             <p class="realizada">Espécie</p>
-            <h5 class="hr">Tilápia San Pitter</h5>
+            <h5 class="hr">{{sistema.id_peixe}}</h5>
           </div>
           <div class="hours">
             <p class="realizada">Quantidade</p>
-            <h5 class="hr">45 Peixes</h5>
+            <h5 class="hr">{{sistema.qto_peixe}}</h5>
           </div>
         </div>
       </div>

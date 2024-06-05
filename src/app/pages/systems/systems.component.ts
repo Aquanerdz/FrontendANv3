@@ -13,14 +13,6 @@ export class SystemsComponent implements OnInit {
 
   constructor(private systemsService: AquaService, private router: Router){}
 
-  // findId(id: number){
-  //   return this.listaSystems.find(system => system.id_sistema === id)
-  // }
-
-  detalharSistema(){
-
-  }
-
   ngOnInit(): void {
     this.listarSystems()
   }
@@ -32,5 +24,12 @@ export class SystemsComponent implements OnInit {
     })
   }
 
-
+  detalharSistema(idStm: number){
+    // console.log(`O card clicado é o de ID: ${this.listaSystems.find(s => s.id_sistema === idStm)}`) //isso nn é muito ao certo
+    return this.systemsService.systemId(idStm).subscribe(data => {
+      // console.log(data);
+      this.router.navigate(['system/', idStm])
+      localStorage.setItem('idSistemaAtual', JSON.parse(JSON.stringify(idStm)))
+    })
+  }
 }

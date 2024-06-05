@@ -3,7 +3,7 @@
   <h2 class="stm">Sistemas</h2>
   <div class="center">
     <div class="left">
-      <div class="card" *ngFor="let sistema of listaSystems" (click)="detalharSistema()">
+      <div class="card" *ngFor="let sistema of listaSystems" (click)="detalharSistema(sistema.id_sistema)">
         <div class="title-vector">
           <h5 class="card-title">{{sistema.nome_sistema}}</h5>
           <img src="../../../assets/info-circle.svg" alt="Mais infos" />

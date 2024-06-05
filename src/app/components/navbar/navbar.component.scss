@@ -129,19 +129,25 @@
   }
 }
 
-@media only screen and (max-width: 1135px) {
+@media only screen and (max-width: 1140px) {
   .top-log {
     .alterns {
       width: 21vw;
+      font-size: 0.75rem;
     }
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1051px) {
   .top-log {
     .alterns {
       justify-content: space-between;
-      width: 23vw;
+      width: 21vw;
+
+      .checked,
+      .dischecked {
+        font-size: 0.75rem;
+      }
     }
   }
 }
